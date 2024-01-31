@@ -14,34 +14,30 @@ body {
     --red: #fe0222;
     --orange: #fd7702;
     --yellow: #ffbb00;
-  
+
     --background: var(--offwhite);
     --accent: var(--ash-black);
-  
+
     margin: 0;
     padding: 0;
     background-color: var(--background);
     color: var(--accent);
-    font-family: 'Roboto', sans-serif; /* Add this line to set Roboto as the default font */
+    font-family: 'Roboto', sans-serif;
 }
-  
-  * {
+
+* {
     font-weight: 400;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
-  }
-  
-  h1,
-  h2,
-  h3 {
-    font-family: sofia-pro, sans-serif;
-    font-weight: 600;
-    font-style: normal;
-  }
-  
+}
 
-  
-  footer {
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+footer {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -50,19 +46,16 @@ body {
     justify-content: flex-start;
     align-items: center;
     padding: 20px;
-    background-image: radial-gradient(
-      rgba(0, 0, 0, 0) 1px,
-      var(--background) 1px
-    );
+    background-image: radial-gradient(rgba(0, 0, 0, 0) 1px, var(--background) 1px);
     background-size: 4px 4px;
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
     -moz-backdrop-filter: blur(3px);
     font-size: 14px;
     line-height: 14px;
-  }
-  
-  footer::before {
+}
+
+footer::before {
     display: block;
     content: "";
     position: absolute;
@@ -72,58 +65,58 @@ body {
     height: 1px;
     background: var(--accent);
     opacity: 0.2;
-  }
-  
-  footer svg {
+}
+
+footer svg {
     margin-right: 20px;
-  }
-  
-  footer a {
+}
+
+footer a {
     text-decoration: none;
     color: var(--accent);
-  }
-  
-  code {
-    font-family: input-mono, monospace;
+}
+
+code {
+    font-family: 'Roboto', monospace;
     font-weight: 400;
     font-style: normal;
-  }
-  
-  ::-webkit-scrollbar {
+}
+
+::-webkit-scrollbar {
     height: 5px;
     width: 5px;
     background: var(--background);
-  }
-  
-  ::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-thumb {
     background: var(--accent);
     -webkit-border-radius: 1ex;
-  }
-  
-  ::-webkit-scrollbar-corner {
+}
+
+::-webkit-scrollbar-corner {
     background: var(--background);
-  }
-  
-  html {
+}
+
+html {
     scroll-snap-type: y mandatory;
-  }
-  
-  h1 {
+}
+
+h1 {
     font-size: 56px;
     font-weight: 700;
     letter-spacing: -3px;
     line-height: 1.2;
     text-align: center;
-  }
-  
- p {
-  width: 100%; /* Add this line to make the text take up the full width of its container */
-  white-space: normal; /* Add this line to make the text wrap to the next line */
-  font-size: 28px;
-  line-height: 1.2;
-  }
-  
-  section {
+}
+
+p {
+    width: 100%;
+    white-space: normal;
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+section {
     height: 100vh;
     display: flex;
     justify-content:center;
@@ -131,42 +124,66 @@ body {
     position: relative;
     scroll-snap-align: center;
     perspective: 500px;
-  }
-  
-  section > div {
+}
+
+section > div {
     width: 100%;
     height: 400px;
     position: relative;
-    
     max-height: 90vh;
     margin: 20px;
     overflow: hidden;
     border-radius: 20px;
-  }
+}
 
- 
-  
-  img {
-    position: relative; /* Change from absolute to relative */
-    top: 0; /* Reset top to 0 */
-    width: 100%; /* w-full */
-    height: 350px; /* Change from 300px to 350px */
-    object-fit: contain;   
-    z-index: 10; /* Change from 0 to 10 */
-     /* Increase the blur and spread radius */
-  }
-  
-  .progress {
+img {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+    z-index: 10;
+}
+
+.progress {
     position: fixed;
     left: 0;
     right: 0;
     height: 5px;
     background: var(--accent);
     bottom: 100px;
-  }
-  
-  .words > div {
+}
+
+.words > div {
     display: flex;
     flex-direction: row;
     align-items: stretch;
-  }
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 32px; /* Smaller font size */
+        letter-spacing: -1px;
+    }
+
+    p {
+        font-size: 16px; /* Smaller font size */
+        line-height: 1.4;
+    }
+
+    section > div {
+        height: auto; /* Make height responsive */
+        max-height: none;
+        margin: 10px;
+    }
+
+    footer {
+        padding: 10px; /* Reduce padding */
+        font-size: 12px; /* Smaller font size */
+    }
+
+    .progress {
+        bottom: 50px; /* Adjust position */
+    }
+}
